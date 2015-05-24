@@ -815,7 +815,7 @@ static int statsd_metric_submit_unsafe (char const *name, /* {{{ */
       values[0].gauge = (gauge_t) c_avl_size (metric->set);
   }
   else
-    values[0].derive = (derive_t) metric->value;
+    values[0].derive = (derive_t) metric->value * 10;
 
   return (plugin_dispatch_values (&vl));
 } /* }}} int statsd_metric_submit_unsafe */
